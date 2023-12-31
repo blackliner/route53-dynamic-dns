@@ -39,6 +39,10 @@ const ipChecker = {
     fullname: 'ifconfig.co',
     url: 'https://ifconfig.co/ip'
   },
+  'ifconfig.me': {
+    fullname: 'ifconfig.me',
+    url: 'https://ifconfig.me/ip'
+  },
   'ipify.org': {
     fullname: 'ipify.org',
     url: 'https://api.ipify.org'
@@ -108,18 +112,18 @@ if (dotenvresult.error) {
 }
 
 // Determine if required environment variables are set before starting to execute process
-if (typeof process.env.AWS_ACCESS_KEY_ID === 'undefined' || process.env.AWS_ACCESS_KEY_ID === null) {
-  logger.error('AWS_ACCESS_KEY_ID is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_ACCESS_KEY_ID and try again.')
-  throw new Error('AWS_ACCESS_KEY_ID is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_ACCESS_KEY_ID and try again.')
-}
-if (typeof process.env.AWS_SECRET_ACCESS_KEY === 'undefined' || process.env.AWS_SECRET_ACCESS_KEY === null) {
-  logger.error('AWS_SECRET_ACCESS_KEY is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_SECRET_ACCESS_KEY and try again.')
-  throw new Error('AWS_SECRET_ACCESS_KEY is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_SECRET_ACCESS_KEY and try again.')
-}
-if (typeof process.env.AWS_REGION === 'undefined' || process.env.AWS_REGION === null) {
-  logger.error('AWS_REGION is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_REGION and try again.')
-  throw new Error('AWS_REGION is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_REGION and try again.')
-}
+// if (typeof process.env.AWS_ACCESS_KEY_ID === 'undefined' || process.env.AWS_ACCESS_KEY_ID === null) {
+//   logger.error('AWS_ACCESS_KEY_ID is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_ACCESS_KEY_ID and try again.')
+//   throw new Error('AWS_ACCESS_KEY_ID is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_ACCESS_KEY_ID and try again.')
+// }
+// if (typeof process.env.AWS_SECRET_ACCESS_KEY === 'undefined' || process.env.AWS_SECRET_ACCESS_KEY === null) {
+//   logger.error('AWS_SECRET_ACCESS_KEY is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_SECRET_ACCESS_KEY and try again.')
+//   throw new Error('AWS_SECRET_ACCESS_KEY is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_SECRET_ACCESS_KEY and try again.')
+// }
+// if (typeof process.env.AWS_REGION === 'undefined' || process.env.AWS_REGION === null) {
+//   logger.error('AWS_REGION is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_REGION and try again.')
+//   throw new Error('AWS_REGION is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for AWS_REGION and try again.')
+// }
 if (typeof process.env.ROUTE53_HOSTED_ZONE_ID === 'undefined' || process.env.ROUTE53_HOSTED_ZONE_ID === null) {
   logger.error('ROUTE53_HOSTED_ZONE_ID is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for ROUTE53_HOSTED_ZONE_ID and try again.')
   throw new Error('ROUTE53_HOSTED_ZONE_ID is undefined or null in .env file or it was not set at runtime (ex: running Docker container).  Please define value for ROUTE53_HOSTED_ZONE_ID and try again.')
